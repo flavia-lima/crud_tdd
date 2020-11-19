@@ -24,6 +24,11 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $name = $row["name"];
                 $address = $row["address"];
                 $salary = $row["salary"];
+
+                //Testa se nome e endereço são iguais. Espera-se FALSE como resultado.
+                echo "Nome e Endereço são semelhantes? ------->";
+                var_dump(hash_equals($name, $address));
+
             } else{
                 //Caso a URL não tenha um parâmetro ID válido, redireciona para a página de erro.
                 header("location: error.php");
